@@ -1,0 +1,124 @@
+let xBolinha = 300;
+let yBolinha = 200;
+let diametro = 15;
+let velocidadeXBolinha = 6;
+let velocidadeYBolinha = 6;
+let yPlayer = 200;
+let yNpc = 200;
+let velocidadeYNpc = 3;
+let pontoPlayer = 0;
+let pontoNpc = 0;
+let larguraRaquete = 10;
+let comprimentoRaquete = 60;
+let raio = diametro/2;
+function setup() {
+  createCanvas(600, 400);
+}
+function pontos(){
+  fill(255) 
+  text(pontoPlayer, 280, 10)
+  text(pontoNpc, 320, 10)
+}
+function draw() {
+  background(0);
+  circle(xBolinha, yBolinha, diametro);
+  xBolinha += velocidadeXBolinha;
+  yBolinha += velocidadeYBolinha;
+  yNpc += velocidadeYNpc;
+  
+  if (xBolinha > width){
+    velocidadeXBolinha *= -1;
+    pontoPlayer += 1;
+  }
+  if (xBolinha < 0){
+    velocidadeXBolinha *= -1;
+    pontoNpc += 1;
+  }
+  if(xBolinha < 200 && xBolinha - raio < larguraRaquete && yBolinha < yPlayer + comprimentoRaquete && yBolinha > yPlayer - comprimentoRaquete){
+    velocidadeXBolinha *= -1;
+  }
+   if(xBolinha > 200 && xBolinha + raio > 600 - larguraRaquete && yBolinha < yNpc + comprimentoRaquete && yBolinha > yNpc - comprimentoRaquete){
+    velocidadeXBolinha *= -1;
+  }
+  if (yBolinha > height || yBolinha < 0){
+   velocidadeYBolinha *= -1;
+  }
+   if (yNpc > height || yNpc < 0){
+   velocidadeYNpc *= -1;
+  }
+  
+  rect(0,yPlayer,larguraRaquete,comprimentoRaquete);
+  rect(590,yNpc,larguraRaquete,comprimentoRaquete);
+  
+   if (keyIsPressed === true) {
+    if (keyCode === UP_ARROW) {
+      yPlayer -= 8;
+    } else if (keyCode === DOWN_ARROW) {
+      yPlayer += 8;
+}
+}
+  pontos()
+
+}
+let xBolinha = 300;
+let yBolinha = 200;
+let diametro = 15;
+let velocidadeXBolinha = 6;
+let velocidadeYBolinha = 6;
+let yPlayer = 200;
+let yNpc = 200;
+let velocidadeYNpc = 3;
+let pontoPlayer = 0;
+let pontoNpc = 0;
+let larguraRaquete = 10;
+let comprimentoRaquete = 60;
+let raio = diametro/2;
+function setup() {
+  createCanvas(600, 400);
+}
+function pontos(){
+  fill(255) 
+  text(pontoPlayer, 280, 10)
+  text(pontoNpc, 320, 10)
+}
+function draw() {
+  background(0);
+  circle(xBolinha, yBolinha, diametro);
+  xBolinha += velocidadeXBolinha;
+  yBolinha += velocidadeYBolinha;
+  yNpc += velocidadeYNpc;
+  
+  if (xBolinha > width){
+    velocidadeXBolinha *= -1;
+    pontoPlayer += 1;
+  }
+  if (xBolinha < 0){
+    velocidadeXBolinha *= -1;
+    pontoNpc += 1;
+  }
+  if(xBolinha < 200 && xBolinha - raio < larguraRaquete && yBolinha < yPlayer + comprimentoRaquete && yBolinha > yPlayer - comprimentoRaquete){
+    velocidadeXBolinha *= -1;
+  }
+   if(xBolinha > 200 && xBolinha + raio > 600 - larguraRaquete && yBolinha < yNpc + comprimentoRaquete && yBolinha > yNpc - comprimentoRaquete){
+    velocidadeXBolinha *= -1;
+  }
+  if (yBolinha > height || yBolinha < 0){
+   velocidadeYBolinha *= -1;
+  }
+   if (yNpc > height || yNpc < 0){
+   velocidadeYNpc *= -1;
+  }
+  
+  rect(0,yPlayer,larguraRaquete,comprimentoRaquete);
+  rect(590,yNpc,larguraRaquete,comprimentoRaquete);
+  
+   if (keyIsPressed === true) {
+    if (keyCode === UP_ARROW) {
+      yPlayer -= 8;
+    } else if (keyCode === DOWN_ARROW) {
+      yPlayer += 8;
+}
+}
+  pontos()
+
+}
